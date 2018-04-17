@@ -32,7 +32,7 @@ class UserRepository extends Repository
     {
         $password = sha1($password);
 
-        $query = "INSERT INTO $this->tableName (firstName, lastName, email, password) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (firstName, lastName, email, password) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ssss', $firstName, $lastName, $email, $password);
