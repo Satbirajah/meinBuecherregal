@@ -6,6 +6,9 @@
  * Time: 13:45
  */
 
+require_once '../repository/LoginRepository.php';
+
+
 class LoginController
 {
 

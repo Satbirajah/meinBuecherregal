@@ -28,13 +28,13 @@
               <?php if(strlen($_SESSION['uid'])>0): ?>
                   <li><a href="/">Home</a></li>
                   <li><a href="/genre/index">Genres</a></li>
-                  <li><a href="/user">Logout</a></li>
+                  <li><a href="/login/logout">Logout</a></li>
               <?php else: ?>
             	<li><a class="navbar-brand" href="/">Mein Buecherregal</a></li>
                 <li><a href="/">Home</a></li>
                 <li><a href="/genre/index">Genres</a></li>
-                <li><a href="/Login/login">Login</a></li>
-                <li><a href="/registration/registration">Registration</a></li>
+                <li><a href="/Login/index">Login</a></li>
+                <li><a href="/registration/index">Registration</a></li>
               <?php endif ?>
           </ul>
         </div><!--/.nav-collapse -->
