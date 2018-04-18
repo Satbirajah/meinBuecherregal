@@ -18,15 +18,16 @@ class BuchRepository extends Repository
         }
     }
 
-    public function update($titel,$autor,$veroeffentlicht,$pers_zmsf){
+    public function update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid){
+
         $query="UPDATE $this->tableName SET titel = ? , autor= ? ,veroeffentlicht = ?, pers_zmsf=? WHERE ugid = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss',$titel,$autor,$veroeffentlicht,$pers_zmsf);
+        $statement->bind_param('ssssi',$titel,$autor,$veroeffentlicht,$pers_zmsf, $ugid);
         if(!$statement->execute()){
             throw new Exception($statement->error);
         }
         else{
-            return $statement
+            //return $statement
         }
     }
 

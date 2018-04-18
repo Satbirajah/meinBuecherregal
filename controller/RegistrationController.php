@@ -6,6 +6,8 @@
  * Time: 09:14
  */
 
+require_once '../repository/LoginRepository.php';
+
 class RegistrationController
 {
 
@@ -17,7 +19,7 @@ class RegistrationController
         $view->display();
     }
 
-    public function doCreate(){
+    public function registration(){
         if($_POST ['send']){
 
             $nickname = $_POST['nickname'];

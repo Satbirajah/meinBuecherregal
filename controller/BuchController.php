@@ -6,6 +6,9 @@
  * Time: 13:46
  */
 
+require_once '../repository/BuchRepository.php';
+
+
 class BuchController
 {
 
@@ -46,15 +49,19 @@ class BuchController
 
     //Damit änderungen gemacht werden können
     public function update(){
+        if($_POST['send']){
+            //zuerst ugid holen vom buch
+            //neue werte holen
+            $buchRepository= new BuchRepository();
+            $buchRepository->update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid);
+        }
 
-        $buchRepository= new BuchRepository();
-        $buchRepository->update();
 
     }
 
     //Damit das Buch gelöscht werden kann
     public function delete(){
-
+        //zuerts ugId holen
         $buchRepository= new BuchRepository();
         $buchRepository->update();
     }
