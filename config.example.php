@@ -22,7 +22,7 @@ return array(
     'database' => array(
         'host'     => 'localhost',
         'username' => 'root',
-        'password' => 'Welcome$16',
+        'password' => '',
         'database' => 'meinbuecherregal',
     ),
 

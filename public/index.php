@@ -14,6 +14,6 @@ require_once '../lib/formbuilder/FormBuilder.php';
 require_once '../lib/View.php';
 
 session_start();
-
+$_SESSION['uid']=NULL;
 $dispatcher = new Dispatcher();
 $dispatcher->dispatch();

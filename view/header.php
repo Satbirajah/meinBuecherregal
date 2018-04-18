@@ -25,11 +25,17 @@
         
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav">
-          	<li><a class="navbar-brand" href="/">Mein Buecherregal</a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Genres</a></li>
-            <li><a href="/user">Login</a></li>
-            <li><a href="/user/create">Registration</a></li>
+              <?php if(strlen($_SESSION['uid'])>0): ?>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/genre/index">Genres</a></li>
+                  <li><a href="/user">Logout</a></li>
+              <?php else: ?>
+            	<li><a class="navbar-brand" href="/">Mein Buecherregal</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/genre/index">Genres</a></li>
+                <li><a href="/Login/login">Login</a></li>
+                <li><a href="/registration/registration">Registration</a></li>
+              <?php endif ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
