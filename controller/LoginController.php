@@ -23,13 +23,13 @@ class LoginController
         if($_POST ['send']){
             $nickname = $_POST['nickname'];
             $email = $_POST['email'];
-            $passwort = passwort_hash($_POST['passwort']);
+            $passwort =$_POST['passwort'];
 
             $loginRepository = new LoginRepository();
-            $userPasswort = $loginRepository ->getUser($email,$nickname);
-            if($passwort == $userPasswort['passwort']){
-                session_start();
-                $_SESSION['uid']= $userPasswort['id'];
+            $user = $loginRepository ->getUser($email,$nickname);
+            if(password_verify($passwort,$user['passwort'])){
+
+                $_SESSION['uid']= $user['id'];
             }
             else{
                 echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
@@ -38,7 +38,7 @@ class LoginController
     }
 
     public function logout(){
-        $_SESSION['uid']= NULL;
+        unset($_SESSION['uid']);
         session_unset();
         session_destroy();
     }

@@ -13,7 +13,7 @@ class LoginRepository extends Repository
     protected $tablename = "user";
 
     public function create($nickname ,$email,$passwort){
-        $password = password_hash($passwort);
+        $password = password_hash($passwort,PASSWORD_DEFAULT);
 
         $query = "INSERT INTO $this->tablename (nickname, email, password) VALUES ( ?, ?, ?)";
 
