@@ -1,10 +1,26 @@
-        <hr>
+     <html class="f1">
+        <hr style = width:100%;>
         <footer>
+        <link href="/css/style.css" rel="stylesheet">
+        
+        
           <p>&copy; ICT Berufsbildungcenter AG 2016</p>
-        </footer>
-    </div>
+          <h4 style= color:#8A5A4A;>Kontaktdaten</h4>
+          
+	<p>Iris Burkhalter<br>
+	IMS Lernende</p>
+    
+    
+	<p>Satbirajah Markandu<br>
+	IMS Lernende</p>
+    
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  </body>
+          
+          
+    </footer>    
+        
+
+
+ 
 </html>
+     

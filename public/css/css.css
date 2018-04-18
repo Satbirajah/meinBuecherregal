@@ -1,0 +1,26 @@
+ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #243599;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+a {
+	float: left;
+	color: white;
+	display: block;
+    color: #FFEDE1;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+p {
+	color: #8A5A4A;
+	
+}
+.f1{
+	background: #A2E0FF;
+}
