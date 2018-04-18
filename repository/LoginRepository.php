@@ -27,11 +27,18 @@ class LoginRepository extends Repository
     }
 
     public function getUser($email,$nickname){
-        $query = "SELECT passwort FROM {$this->table} WHERE email='{$email}' AND nickname='{$nickname}'";
+        $query = "SELECT id,passwort FROM {$this->table} WHERE email = ? nickname=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->execute();
-        $passwort= $statement->getResult();
-        return $passwort;
+        $statement->bind_params('ss',$email,$nickname);
+        if(!$statement->execute()){
+            throw new Exception($statement->error);
+        }
+        else{
+           $resultat = $statement->getResult();
+           $user = $resultat-> fetch_object();
+            return $user;
+        }
+
     }
 }

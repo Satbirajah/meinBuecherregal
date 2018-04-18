@@ -42,12 +42,19 @@ class LoginController
 
             $loginRepository = new LoginRepository();
             $userPasswort = $loginRepository ->getUser($email,$nickname);
-            if($passwort == $userPasswort){
+            if($passwort == $userPasswort['passwort']){
                 session_start();
+                $_SESSION['uid']= $userPasswort['id'];
             }
             else{
                 echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
             }
         }
+    }
+
+    public function logout(){
+        $_SESSION['uid']= NULL;
+        session_unset();
+        session_destroy();
     }
 }
