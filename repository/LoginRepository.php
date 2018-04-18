@@ -10,11 +10,12 @@ require_once '../lib/Repository.php';
 
 class LoginRepository extends Repository
 {
-    protected $table = "user";
+    protected $tablename = "user";
+
     public function create($nickname ,$email,$passwort){
         $password = password_hash($passwort);
 
-        $query = "INSERT INTO $this->table (nickname, email, password) VALUES ( ?, ?, ?)";
+        $query = "INSERT INTO $this->tablename (nickname, email, password) VALUES ( ?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('sss',$nickname, $email, $password);
@@ -27,7 +28,7 @@ class LoginRepository extends Repository
     }
 
     public function getUser($email,$nickname){
-        $query = "SELECT id,passwort FROM {$this->table} WHERE email = ? nickname=?";
+        $query = "SELECT id,passwort FROM {$this->tablename} WHERE email = ? nickname=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_params('ss',$email,$nickname);

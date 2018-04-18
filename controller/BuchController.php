@@ -8,15 +8,23 @@
 
 class BuchController
 {
+
     public function index(){
-        $buchRepository = new BuchRepository();
+       $view = new View('buecher_anzeigen');
+       $view->title="Meine Bücher";
+       $view->heading="Meine Bücher";
+        $view->display();
     }
 
     public function create()
     {
+        $view = new View('buch_create');
+        $view->title="Buch hinzufügen";
+        $view->heading="Buch hinzufügen";
+        $view->display();
 
     }
-
+    //Erstellen des Buches
     public function doCreate(){
 
     }

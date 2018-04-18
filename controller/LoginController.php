@@ -9,26 +9,12 @@
 class LoginController
 {
 
-
-
-    //noch realisieren VIEW
-    public function create()
+    public function index()
     {
-        $view = new View();
-
-    }
-
-    public function doCreate(){
-        if($_POST ['send']){
-
-            $nickname = $_POST['nickname'];
-            $email = $_POST['email'];
-            $passwort = $_POST['passwort'];
-
-            $loginRepository = new LoginRepository();
-            $loginRepository ->create ($nickname,$email,$passwort);
-        }
-
+        $view = new View('user_login');
+        $view->title = 'Login';
+        $view->heading = 'Login';
+        $view->display();
     }
 
     //Login des Users
@@ -38,7 +24,6 @@ class LoginController
             $nickname = $_POST['nickname'];
             $email = $_POST['email'];
             $passwort = passwort_hash($_POST['passwort']);
-
 
             $loginRepository = new LoginRepository();
             $userPasswort = $loginRepository ->getUser($email,$nickname);
