@@ -34,7 +34,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/genre/index">Genres</a></li>
                 <li><a href="/Login/login">Login</a></li>
-                <li><a href="/registration/registration">Registration</a></li>
+                <li><a href="/registration/index">Registration</a></li>
               <?php endif ?>
           </ul>
         </div><!--/.nav-collapse -->
