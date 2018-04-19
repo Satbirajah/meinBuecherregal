@@ -13,13 +13,16 @@
 
 // https://www.wirlernen.at/PHP5fuerEinsteiger/049.php
 
-$form = new Form('/buch/showBooks');
+$form = new Form('/buch/createBook');
 echo "Genre";
 echo '<br>';
 echo "<select name='genre[]'>";
     foreach($genres as $genre) {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 33a190ecf644a43f95e1356cb9f6b10b512bd6c6
         echo '<option value ="' . $genre->id . '">'. $genre->genre.'</option>';
 
     }

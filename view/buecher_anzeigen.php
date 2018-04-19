@@ -10,10 +10,10 @@
                 <div class="panel-heading"><?= $buch->titel; ?><?= $buch->autor; ?></div>
                 <div class="panel-body">
                   <a><p class="description"> <?= $buch->titel; ?> <?= $buch->autor; ?></p></a>
-                    <?php $update = new Form('buch/update('.$buch[$ugid].')');
+                    <?php $update = new Form('buch/update('.$buch->ugid.')');
                         echo $update->submit()->label('Anpassen')->name('update');
                     ?>
-                    <?php $delete = new Form('buch/delete('.$buch[$ugid].')');
+                    <?php $delete = new Form('buch/delete('.$buch->ugid.')');
                     echo $update->submit()->label('Anpassen')->name('update');
                     ?>
                 </div>
@@ -22,8 +22,8 @@
     <?php endif ?>
     <?php
 
-    $form = new Form('/buch/create');
+  /*  $form = new Form('/buch/createBook');
     echo $form->submit()->label('Buch hinzufügen')->name('send');
-    $form->end();
+    $form->end();*/
     ?>
 </article>

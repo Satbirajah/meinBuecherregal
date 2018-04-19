@@ -15,6 +15,8 @@ class BuchController
        $view = new View('buecher_anzeigen');
        $view->title="Meine Bücher";
        $view->heading="Meine Bücher";
+       $buecher = new GenreRepository();
+       $view->buecher=$buecher->getGenreByUID($_SESSION['uid']);
         $view->display();
     }
 
@@ -53,6 +55,14 @@ class BuchController
 
 
     public function showBooks(){
+        $buchRepository = new BuchRepository();
+        $buecher= $buchRepository->getBookByUidGid();
+
+       $view = new View('buecher_anzeigen');
+        $view->buecher = $buecher;
+        $view->title="Bücher ";
+        $view->heading="Buücher";
+        $view->display();
 
     }
     public function uploadImage($file, $uid )
@@ -66,8 +76,7 @@ class BuchController
         return $file_destination;
     }
 
-
-    //Damit änderungen gemacht werden können
+  //Damit änderungen gemacht werden können
     public function update($ugid){
 
         if($_POST['send']){
