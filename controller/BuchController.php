@@ -7,8 +7,7 @@
  */
 
 require_once '../repository/BuchRepository.php';
-
-
+require_once '../repository/GenreRepository.php';
 class BuchController
 {
     protected $book = null;
@@ -21,7 +20,14 @@ class BuchController
 
     public function create()
     {
+
+        $genreRepository = new GenreRepository();
+        $genres = $genreRepository -> readAll();
+
+
+
         $view = new View('buch_create');
+        $view->genres = $genres;
         $view->title="Buch hinzufügen";
         $view->heading="Buch hinzufügen";
         $view->display();
