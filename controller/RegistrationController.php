@@ -8,6 +8,7 @@
 
 require_once '../repository/LoginRepository.php';
 require_once '../lib/Validation.php';
+require_once 'LoginController.php';
 
 class RegistrationController
 {
@@ -40,9 +41,11 @@ class RegistrationController
             $loginRepository = new LoginRepository();
             if($passwort===$passwort2&& $emailOK&&$passwortOK&&$nicknameOK) {
                 $loginRepository->create($nickname, $email, $passwort);
+                $login = new LoginController();
+                $login->index();
             }
             else{
-                echo "<p style='color: red'>Bitte überprüfen Sie ihre Eingaben</p>";
+
             }
 
         }

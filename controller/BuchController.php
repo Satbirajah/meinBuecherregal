@@ -36,7 +36,7 @@ class BuchController
             $pers_zmsf=$_POST['pers_zmsf'];
             $genre =$_POST['genre'];
             $bild="";
-            //bild -->
+            //bild -->noch machen
             $uid = $_SESSION['uid'];
 
             $genreRepository = new GenreRepository();
@@ -48,11 +48,16 @@ class BuchController
     }
 
     //Damit änderungen gemacht werden können
-    public function update(){
+    public function update($ugid){
 
         if($_POST['send']){
             //zuerst ugid holen vom buch
             //neue werte holen
+            $titel=$_POST['buchTitel'];
+            $autor = $_POST['autor'];
+            $veroeffentlicht= $_POST['veroeffentlicht'];
+            $pers_zmsf=$_POST['pers_zmsf'];
+            $genre =$_POST['genre'];
             $buchRepository= new BuchRepository();
             $buchRepository->update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid);
         }
@@ -61,9 +66,9 @@ class BuchController
     }
 
     //Damit das Buch gelöscht werden kann
-    public function delete(){
+    public function delete($ugid){
         //zuerts ugId holen
         $buchRepository= new BuchRepository();
-        $buchRepository->update();
+        $buchRepository->deleteById($ugid);
     }
 }

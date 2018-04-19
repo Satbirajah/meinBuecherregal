@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><?= $title ?> | Mein Buecherregal</title>
+    <title><?= $title ?> | Mein Bücherregal</title>
 
     <!-- Bootstrap core CSS -->
     
@@ -30,7 +30,7 @@
                   <li><a href="/genre/index">Genres</a></li>
                   <li><a href="/login/logout">Logout</a></li>
               <?php else: ?>
-            	<li><a class="navbar-brand" href="/">Mein Buecherregal</a></li>
+            	<li><a class="navbar-brand" href="/">Mein Bücherregal</a></li>
                 <li><a href="/">Home</a></li>
                 <li><a href="/genre/index">Genres</a></li>
                 <li><a href="/Login/index">Login</a></li>

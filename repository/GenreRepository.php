@@ -8,7 +8,7 @@
 require_once '../lib/Repository.php';
 
 class GenreRepository extends Repository{
-    protected $tablename = "genre";
+    protected $tableName = "genre";
 
     //Genre ID wird zurück gegeben (privater Bereich)
     public function getGenre($genre){
@@ -21,7 +21,7 @@ class GenreRepository extends Repository{
         }
         else{
             $statement->execute();
-            $resultat = $statement->getResult();
+            $resultat = $statement->get_result();
             return $resultat;
         }
 

@@ -26,7 +26,7 @@ class GenreController
             $view = new view('genre_public');
             $view->title = 'Alle Genres';
             $view->heading = 'Alle Genres';
-            $view->genre= $genreRepository->readAll();
+            $view->genres= $genreRepository->readAll();
             $view->display();
         }
     }

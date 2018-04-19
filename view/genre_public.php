@@ -4,12 +4,10 @@
             <h2 class="item title"> Hoopla es gibt noch keine Genres</h2>
         </div>
     <?php else: ?>
-        <?php foreach ($genres as $gerne): ?>
+        <?php foreach ($genres as $genre): ?>
             <div class="panel panel-default">
-                <div class="panel-heading"><?= $genre->genre; ?><?= $genre->beschreibung; ?></div>
                 <div class="panel-body">
-                    <p class="description"> <?= $genre->genre; ?> <?= $genre->beschreibung; ?>.</p>
-                    <p>
+                    <p class="description"> <h3><?= $genre->genre; ?></h3> <?= $genre->Beschreibung; ?>.</p>
                 </div>
             </div>
         <?php endforeach ?>

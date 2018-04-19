@@ -7,7 +7,7 @@
  */
 
 require_once '../repository/LoginRepository.php';
-
+require_once 'GenreController.php';
 
 class LoginController
 {
@@ -33,6 +33,8 @@ class LoginController
             if(password_verify($passwort,$user['passwort'])){
 
                 $_SESSION['uid']= $user['id'];
+                $genre = new GenreController();
+                $genre->index();
             }
             else{
                 echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
@@ -41,8 +43,10 @@ class LoginController
     }
 
     public function logout(){
-        unset($_SESSION['uid']);
         session_unset();
         session_destroy();
+        $_SESSION['uid']= NULL;
+        $genre = new GenreController();
+        $genre->index();
     }
 }

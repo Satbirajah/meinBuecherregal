@@ -27,7 +27,7 @@ class BuchRepository extends Repository
             throw new Exception($statement->error);
         }
         else{
-            $resultat = $statement->getResult();
+            $resultat = $statement->get_result();
             $user = $resultat-> fetch_object();
             return $user;
         }
@@ -46,7 +46,7 @@ class BuchRepository extends Repository
             throw new Exception($statement->error);
         }
         else{
-            $resultat = $statement->getResult();
+            $resultat = $statement->get_result();
             $book = $resultat-> fetch_object();
             return $book;
         }
