@@ -44,12 +44,12 @@ class BuchController
             $bild="";
             //bild -->noch machen
             $uid = $_SESSION['uid'];
-
+            $gid = $_POST['genre'];
             $genreRepository = new GenreRepository();
             $genreID = $genreRepository->getGenre($genre);
 
             $buchRepository= new BuchRepository();
-            $buchRepository->create($buchTitel,$autor,$veroeffentlicht,$pers_zmsf,$bild,$uid,$genreID);
+            $buchRepository->create($buchTitel,$autor,$veroeffentlicht,$pers_zmsf,$bild,$uid,$gid);
         }
     }
 

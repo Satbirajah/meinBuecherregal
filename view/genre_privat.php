@@ -4,11 +4,10 @@
             <h2 class="item title"> Du hast noch keine Genre. </h2>
         </div>
     <?php else: ?>
-        <?php foreach ($genres as $gerne): ?>
+        <?php foreach ($genres as $genre): ?>
             <div class="panel panel-default">
-               // <div class="panel-heading"><?= $genre->genre; ?><?= $genre->beschreibung; ?></div>
                 <div class="panel-body">
-                  <a><p class="description"> <?= $genre->genre; ?> <?= $genre->beschreibung; ?></p></a>
+                  <a href="/buch/index" value="<?= $genre->id?>"><p class="description"> <?= $genre->genre; ?> </p></a>
                 </div>
             </div>
         <?php endforeach ?>

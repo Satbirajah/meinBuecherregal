@@ -30,14 +30,15 @@ class LoginController
 
             $loginRepository = new LoginRepository();
             $user = $loginRepository ->getUser($email,$nickname);
-            if(password_verify($passwort,$user['passwort'])){
+             if(password_verify($passwort, $user->passwort)){
 
-                $_SESSION['uid']= $user['id'];
+                $_SESSION['uid']= $user->id;
                 $genre = new GenreController();
                 $genre->index();
+                echo "Sie wurden eingeloggt";
             }
             else{
-                echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
+               // echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
             }
         }
     }

@@ -37,10 +37,7 @@ class LoginRepository extends Repository
         }
         else{
             $result = $statement->get_result();
-            $user= array();
-            while ($row = $result->fetch_object()) {
-                $user[] = $row;
-            }
+            $user = $result->fetch_object();
             return $user;
         }
 

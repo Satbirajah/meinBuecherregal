@@ -19,18 +19,21 @@ echo "Genre";
 echo '<br>';
 echo "<select name='genre[]'>";
     foreach($genres as $genre) {
+<<<<<<< HEAD
         echo '<option value ="' . $genre->gid . '">'. $genre-> Beschreibung.'</options>';
+=======
+        echo '<option value ="' . $genre->id . '">'. $genre->genre.'</option>';
+>>>>>>> 19d67420bd130c82269183231d0743ff67abc86f
     }
    echo "</select>";
     echo '<br>';
 echo '<label for="file">Bild</label>';
 echo '<br>';
 echo '<input type="file" name="bild"/>';
-echo $form->text()->label('Titel')->name('titel');
+echo $form->text()->label('Titel')->name('buchTitel');
 echo $form->text()->label('Autor')->name('autor');
-echo $form->text()->label('Veroeffentlicht')->name('datum');
-echo $form->text()->label('Zusammenfassung')->name('zusammenfassung');
-
+echo $form->text()->label('Veröffentlicht')->name('veroeffentlicht');
+echo $form->text()->label('Zusammenfassung')->name('pers_zmsf');
 
 echo $form->submit()->label('Buch hinzufüen')->name('send');
 
