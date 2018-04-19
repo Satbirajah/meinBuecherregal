@@ -7,6 +7,7 @@
  */
 
 require_once '../repository/LoginRepository.php';
+require_once '../lib/Validation.php';
 
 class RegistrationController
 {
@@ -20,14 +21,30 @@ class RegistrationController
     }
 
     public function registration(){
+        $validation = new Validation();
+        $nicknameOK = false ;
+        $emailOK = false;
+        $passwortOK = false;
         if($_POST ['send']){
 
             $nickname = $_POST['nickname'];
+            $nicknameOK= $validation->stringLenght(3,25,$nickname);
+
             $email = $_POST['email'];
+            $emailOK= $validation->email($email);
+
             $passwort = $_POST['passwort'];
+            $passwortOK= $validation->stringLenght(8,15,$email);
+            $passwort2 = $_POST['passwort2'];
 
             $loginRepository = new LoginRepository();
-            $loginRepository ->create ($nickname,$email,$passwort);
+            if($passwort===$passwort2&& $emailOK&&$passwortOK&&$nicknameOK) {
+                $loginRepository->create($nickname, $email, $passwort);
+            }
+            else{
+                echo "<p style='color: red'>Bitte überprüfen Sie ihre Eingaben</p>";
+            }
+
         }
 
     }

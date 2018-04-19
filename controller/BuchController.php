@@ -11,7 +11,7 @@ require_once '../repository/BuchRepository.php';
 
 class BuchController
 {
-
+    protected $book = null;
     public function index(){
        $view = new View('buecher_anzeigen');
        $view->title="Meine Bücher";
@@ -49,6 +49,7 @@ class BuchController
 
     //Damit änderungen gemacht werden können
     public function update(){
+
         if($_POST['send']){
             //zuerst ugid holen vom buch
             //neue werte holen

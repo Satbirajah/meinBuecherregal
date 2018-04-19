@@ -27,7 +27,9 @@ class BuchRepository extends Repository
             throw new Exception($statement->error);
         }
         else{
-            //return $statement
+            $resultat = $statement->getResult();
+            $user = $resultat-> fetch_object();
+            return $user;
         }
     }
 
@@ -35,8 +37,18 @@ class BuchRepository extends Repository
 
     }
 
-    public function getBuch(){
+    public function getBook($titel,$autor,$veroeffentlicht,$pers_zmsf){
 
-
+        $query= "SELECT * FROM $this->tableName WHERE ugid = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ssss',$titel,$autor,$veroeffentlicht,$pers_zmsf);
+        if(!$statement->execute()){
+            throw new Exception($statement->error);
+        }
+        else{
+            $resultat = $statement->getResult();
+            $book = $resultat-> fetch_object();
+            return $book;
+        }
     }
 }

@@ -10,7 +10,7 @@ class Validation
 {
     public function stringLenght($min,$max,$string){
         if(strlen($string)>=$min && strlen($string)<=$max){
-            return "";
+            return true;
         }
         elseif (strlen($string)<$min){
             return 'Sie müssen mindestens '.$min.' Zeichen eingeben.';
