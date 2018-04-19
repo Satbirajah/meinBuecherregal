@@ -35,8 +35,7 @@ class LoginController
                 $_SESSION['uid']= $user->id;
                 $genre = new GenreController();
                 $genre->index();
-                echo "Sie wurden eingeloggt";
-            }
+                            }
             else{
                // echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
             }

@@ -41,16 +41,28 @@ class BuchController
             $veroeffentlicht= $_POST['veroeffentlicht'];
             $pers_zmsf=$_POST['pers_zmsf'];
             $genre =$_POST['genre'];
-            $bild="";
-            //bild -->noch machen
             $uid = $_SESSION['uid'];
-            $gid = $_POST['genre'];
+            $bild= $this->uploadImage($_FILES,$uid);
             $genreRepository = new GenreRepository();
             $genreID = $genreRepository->getGenre($genre);
-
+            $gid = $genreID->id;
             $buchRepository= new BuchRepository();
             $buchRepository->create($buchTitel,$autor,$veroeffentlicht,$pers_zmsf,$bild,$uid,$gid);
         }
+    }
+
+    public function showBooks(){
+
+    }
+    public function uploadImage($file, $uid )
+    {
+        $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+        $timestamp = time();
+        $file_destination = "../public/images/" . $uid . $timestamp . '.' . $ext;
+        if (move_uploaded_file($file['tmp_name'], $file_destination)) {
+            echo $file_destination;
+        }
+        return $file_destination;
     }
 
     //Damit änderungen gemacht werden können

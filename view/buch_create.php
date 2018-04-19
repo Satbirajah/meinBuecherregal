@@ -13,8 +13,7 @@
 
 // https://www.wirlernen.at/PHP5fuerEinsteiger/049.php
 
-$form = new Form('/buch/createBook');
-
+$form = new Form('/buch/showBooks');
 echo "Genre";
 echo '<br>';
 echo "<select name='genre[]'>";
