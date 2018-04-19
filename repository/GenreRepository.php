@@ -16,12 +16,8 @@ class GenreRepository extends Repository{
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s',$genre);
-<<<<<<< HEAD
-        if (!$statement->execute()) {
-=======
 
         if(!$statement->execute()){
->>>>>>> 19d67420bd130c82269183231d0743ff67abc86f
             throw new Exception($statement->error);
         }
         else{

@@ -21,7 +21,7 @@ class BuchRepository extends Repository
 
     public function update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid){
 
-        $query="UPDATE $this->tableName SET titel = ? , autor= ? ,veroeffentlicht = ?, pers_zmsf=? WHERE ugid = ?";
+        $query="UPDATE $this->tableName SET titel = ? , autor= ? ,veroeffentlicht = ?, pers_zmsf=? WHERE id = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ssssi',$titel,$autor,$veroeffentlicht,$pers_zmsf, $ugid);
         if(!$statement->execute()){
@@ -38,18 +38,33 @@ class BuchRepository extends Repository
 
     }
 
-    public function getBook($titel,$autor,$veroeffentlicht,$pers_zmsf){
+    public function getBook($ugid){
 
-        $query= "SELECT * FROM $this->tableName WHERE ugid = ?";
+        $query= "SELECT * FROM $this->tableName WHERE id = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss',$titel,$autor,$veroeffentlicht,$pers_zmsf);
+        $statement->bind_param('i',$ugid);
         if(!$statement->execute()){
             throw new Exception($statement->error);
         }
         else{
             $resultat = $statement->get_result();
-            $book = $resultat-> fetch_object();
+            $book = $resultat->fetch_assoc();
             return $book;
         }
+    }
+    public function getBookByUidGid($uid,$gid){
+        $query= "SELECT * FROM $this->tableName WHERE uid = ? AND gid = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ii',$uid,$gid);
+        $result= $statement->get_result();
+        if(!$statement->execute()){
+            throw new Exception($statement->error);
+        }
+        $books = array();
+        while ($book = $result->fetch_object()) {
+            $books[] = $book;
+        }
+
+        return $books;
     }
 }
