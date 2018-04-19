@@ -51,6 +51,7 @@ class BuchController
         }
     }
 
+
     public function showBooks(){
 
     }
@@ -64,6 +65,7 @@ class BuchController
         }
         return $file_destination;
     }
+
 
     //Damit änderungen gemacht werden können
     public function update($ugid){
