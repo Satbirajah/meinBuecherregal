@@ -15,7 +15,7 @@ class GenreRepository extends Repository{
         $query = "SELECT id FROM {$this->table} WHERE genre=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_params('s',$genre);
+        $statement->bind_param('s',$genre);
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }

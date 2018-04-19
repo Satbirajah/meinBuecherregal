@@ -53,6 +53,7 @@ class BuchController
         }
     }
 
+
     //Damit änderungen gemacht werden können
     public function update($ugid){
 
