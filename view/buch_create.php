@@ -15,12 +15,21 @@
 
 $form = new Form('/buch/createBook');
 
-echo "<select> <option value='$genre'></option></select>";
-echo $form->file()->label('bild')->name('bild');
-echo $form->text()->label('titel')->name('titel');
-echo $form->text()->label('autor')->name('autor');
-echo $form->text()->label('datum')->name('datum');
-echo $form->text()->label('zusammenfassung')->name('zusammenfassung');
+echo "Genre";
+echo '<br>';
+echo "<select name='genre[]'>";
+    foreach($genres as $genre) {
+        echo '<options value ="' . $genre['gid'] . '">Genre</options>';
+    }
+   echo "</select>";
+    echo '<br>';
+echo '<label for="file">Bild</label>';
+echo '<br>';
+echo '<input type="file" name="bild"/>';
+echo $form->text()->label('Titel')->name('titel');
+echo $form->text()->label('Autor')->name('autor');
+echo $form->text()->label('Veroeffentlicht')->name('datum');
+echo $form->text()->label('Zusammenfassung')->name('zusammenfassung');
 
 echo $form->submit()->label('Buch hinzufüen')->name('send');
 
