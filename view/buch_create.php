@@ -18,11 +18,10 @@ echo "Genre";
 echo '<br>';
 echo "<select name='genre[]'>";
     foreach($genres as $genre) {
-<<<<<<< HEAD
-        echo '<option value ="' . $genre->gid . '">'. $genre-> Beschreibung.'</options>';
-=======
+
+
         echo '<option value ="' . $genre->id . '">'. $genre->genre.'</option>';
->>>>>>> 19d67420bd130c82269183231d0743ff67abc86f
+
     }
    echo "</select>";
     echo '<br>';
