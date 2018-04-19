@@ -13,7 +13,7 @@
 
 
 
-$form = new Form('/registration/');
+$form = new Form('/registration/registration');
 
 echo $form->text()->label('Nickname')->name('nickname');
 echo $form->text()->label('Mail')->name('email');

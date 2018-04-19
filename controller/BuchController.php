@@ -28,7 +28,7 @@ class BuchController
 
     }
     //Erstellen des Buches
-    public function doCreate(){
+    public function createBook(){
         if($_POST['send']){
             $buchTitel=$_POST['buchTitel'];
             $autor = $_POST['autor'];
