@@ -13,10 +13,11 @@ class GenreController
 {
     public function index(){
         if(strlen($_SESSION['uid'])>0){
-
+            $genreRepository = new GenreRepository();
             $view =new view('genre_privat');
             $view->title = 'Meine Genres';
             $view->heading = 'Meine Genres';
+            $view->genres= $genreRepository->getGenreByUID();
             $view->display();
         }
         else{
@@ -30,5 +31,6 @@ class GenreController
             $view->display();
         }
     }
+
 
 }

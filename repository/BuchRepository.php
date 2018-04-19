@@ -5,7 +5,8 @@ class BuchRepository extends Repository
 {
     protected $tableName = "user_genre_buch";
     public function create($buchTitel,$autor,$veroeffentlicht,$pers_zmsf,$bild,$uid,$genreID){
-        $query = "INSERT INTO $this->tablename (uid,gid,titel,autor,veroeffentlicht,bildPfad,pers_zmsf) VALUES ( ?, ?, ?,?,?,?,?)";
+        echo $uid;
+        $query = "INSERT INTO $this->tableName (uid,gid,titel,autor,veroeffentlicht,bildName,pers_zmsf) VALUES (?,?,?,?,?,?,?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('iisssss',$uid,$genreID,$buchTitel,$autor,$veroeffentlicht,$bild,$pers_zmsf);
@@ -13,9 +14,9 @@ class BuchRepository extends Repository
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
-        else{
-            return $statement->insert_id;
-        }
+
+        return $statement->insert_id;
+
     }
 
     public function update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid){

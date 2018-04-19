@@ -12,19 +12,43 @@ class GenreRepository extends Repository{
 
     //Genre ID wird zurück gegeben (privater Bereich)
     public function getGenre($genre){
-        $query = "SELECT id FROM {$this->table} WHERE genre=?";
+        $query = "SELECT id FROM {$this->tableName} WHERE genre=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_params('s',$genre);
-        if (!$statement->execute()) {
+        $statement->bind_param('s',$genre);
+
+        if(!$statement->execute()){
             throw new Exception($statement->error);
         }
         else{
-            $statement->execute();
-            $resultat = $statement->get_result();
-            return $resultat;
+            $result = $statement->get_result();
+            $genreID = $result -> fetch_object();
+            return $genreID;
         }
 
     }
+
+    public function getGenreByUID(){
+        $query= "SELECT * FROM user_genre_buch as ugb JOIN genre as g ON ugb.gid= g.id WHERE uid = ? GROUP BY gid";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('i',$_SESSION['uid']);
+        if(!$statement->execute()){
+        throw new Exception($statement->error);
+        }
+        else{
+            $result = $statement->get_result();
+            $genres= array();
+            while ($row = $result->fetch_object()) {
+
+                $genres[] = $row;
+
+            }
+            return $genres;
+        }
+
+
+    }
+
 
 }
