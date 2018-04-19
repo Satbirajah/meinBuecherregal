@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d296ec-bef4-4839-8032-70626402e31e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/BuchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/BuchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/buch_create.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/buch_create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/buecher_anzeigen.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/buecher_anzeigen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/genre_privat.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/genre_privat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/genre_public.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/genre_public.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/user_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/user_registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user_registration.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +17,8 @@
       <file leaf-file-name="user_login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/user_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -39,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -60,8 +53,17 @@
       <file leaf-file-name="buch_create.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/buch_create.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="238">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextBuilder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/formbuilder/TextBuilder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -89,15 +91,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -137,15 +130,15 @@
         <option value="$PROJECT_DIR$/lib/Validation.php" />
         <option value="$PROJECT_DIR$/controller/LoginController.php" />
         <option value="$PROJECT_DIR$/view/default_index.php" />
-        <option value="$PROJECT_DIR$/view/user_login.php" />
         <option value="$PROJECT_DIR$/view/header.php" />
         <option value="$PROJECT_DIR$/view/genre_public.php" />
         <option value="$PROJECT_DIR$/view/user_registration.php" />
         <option value="$PROJECT_DIR$/controller/BuchController.php" />
-        <option value="$PROJECT_DIR$/view/buch_create.php" />
         <option value="$PROJECT_DIR$/view/genre_privat.php" />
         <option value="$PROJECT_DIR$/view/buecher_anzeigen.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/view/user_login.php" />
+        <option value="$PROJECT_DIR$/view/buch_create.php" />
       </list>
     </option>
   </component>
@@ -184,7 +177,13 @@
             <path>
               <item name="MeinBuecherregal" type="b2602c69:ProjectViewProjectNode" />
               <item name="MeinBuecherregal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="MeinBuecherregal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeinBuecherregal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="formbuilder" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="MeinBuecherregal" type="b2602c69:ProjectViewProjectNode" />
@@ -235,12 +234,12 @@
       <workItem from="1523976394860" duration="96000" />
       <workItem from="1524031511032" duration="10950000" />
       <workItem from="1524043139359" duration="9043000" />
-      <workItem from="1524117821051" duration="1850000" />
+      <workItem from="1524117821051" duration="2589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33610000" />
+    <option name="totallyTimeSpent" value="34349000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,7 +280,7 @@
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16458334" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1641791" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.3286638" />
@@ -304,13 +303,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/repository/LoginRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -598,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/user_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/user_index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -633,13 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/buch_create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/genre_privat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -658,6 +636,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/buch_create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/formbuilder/TextBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

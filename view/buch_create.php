@@ -15,10 +15,10 @@
 
 $form = new Form('/buch/createBook');
 
-echo $form->text()->label('Nickname')->name('nickname');
-echo $form->text()->label('Mail')->name('email');
+echo $form->text()->label('titel')->name('titel');
+echo $form->text()->label('autor')->name('autor');
 echo $form->password()->label('Passwort')->name('passwort');
-echo $form->submit()->label('Benutzer erstellen')->name('send');
+echo $form->submit()->label('Buch hinzufüen')->name('send');
 
 $form->end();
 ?>
