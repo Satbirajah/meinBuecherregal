@@ -23,7 +23,7 @@
             echo $form->text()->label('Veröffentlicht')->name('veroeffentlicht')->value($buch->veroeffentlicht);
             echo $form->text()->label('Zusammenfassung')->name('pers_zmsf')->value($buch->pers_zmsf);
 
-            echo $form->submit()->label('Buch ändern')->name('send');
+            echo $form->submit()->label('Buch ändern')->name('update');
             $form->end();
             ?>
         </div>

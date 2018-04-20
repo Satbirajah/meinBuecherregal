@@ -22,8 +22,10 @@ class BuchController
        $view->title="Meine Bücher";
        $view->heading="Meine Bücher";
        $buecher = new BuchRepository();
-       $gid = $_GET['gid'];
-       $view->buecher=$buecher->getBooksByUidGid($_SESSION['uid'],$gid);
+       if(!isset($this->gid)){
+           $this->gid = $_GET['gid'];
+       }
+       $view->buecher=$buecher->getBooksByUidGid($_SESSION['uid'],$this->gid);
         $view->display();
     }
 
@@ -57,21 +59,9 @@ class BuchController
         }
     }
 
-<<<<<<< HEAD
+
     //damit das Bild abgespeichert wird
-=======
 
-    public function showBooks(){
-        $buchRepository = new BuchRepository();
-        $buecher= $buchRepository->getBooksByUidGid($_SESSION['uid'],$this->gid);
-        $view = new View('buecher_anzeigen');
-        $view->buecher = $buecher;
-        $view->title="Bücher ";
-        $view->heading="Bücher";
-        $view->display();
-
-    }
->>>>>>> 9991687b464aeadc2f792e548d4343a611240d89
     public function uploadImage($file, $uid )
     {
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
@@ -107,7 +97,8 @@ class BuchController
             $buchRepository= new BuchRepository();
             $isOK= $buchRepository->update($titel,$autor,$veroeffentlicht,$pers_zmsf,$this->ugid,$bild);
             if($isOK ){
-                $this->showBooks();
+                $genre = new GenreRepository();
+                $genre->index();
             }
         }
 
@@ -124,7 +115,8 @@ class BuchController
             $buchRepository= new BuchRepository();
             $isOK= $buchRepository->deleteById($_GET['id']);
             if($isOK ){
-                $this->showBooks();
+                $genre = new GenreController();
+                $genre->index();
             }
         }
 
