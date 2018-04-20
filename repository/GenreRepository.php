@@ -16,7 +16,10 @@ class GenreRepository extends Repository{
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s',$genre);
+<<<<<<< HEAD
 
+=======
+>>>>>>> f3e4e3d88cb56444ddbb2ebd2daedcfdfc702597
 
         if(!$statement->execute()){
 
@@ -37,6 +40,27 @@ class GenreRepository extends Repository{
         $statement->bind_param('i',$_SESSION['uid']);
         if(!$statement->execute()){
         throw new Exception($statement->error);
+        }
+        else{
+            $result = $statement->get_result();
+            $genres= array();
+            while ($row = $result->fetch_object()) {
+
+                $genres[] = $row;
+
+            }
+            return $genres;
+        }
+
+
+    }
+    public function getGenreByName($genre){
+        $query= "SELECT * FROM user_genre_buch as ugb JOIN genre as g ON ugb.gid= g.id WHERE g.genre = ?";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('s',$genre);
+        if(!$statement->execute()){
+            throw new Exception($statement->error);
         }
         else{
             $result = $statement->get_result();

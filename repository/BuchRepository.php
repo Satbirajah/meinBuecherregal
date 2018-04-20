@@ -19,11 +19,11 @@ class BuchRepository extends Repository
 
     }
 
-    public function update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid){
+    public function update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid,$bild){
 
-        $query="UPDATE $this->tableName SET titel = ? , autor= ? ,veroeffentlicht = ?, pers_zmsf=? WHERE id = ?";
+        $query="UPDATE $this->tableName SET titel = ? , autor= ? ,veroeffentlicht = ?, pers_zmsf=? bildName = ? WHERE id = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssssi',$titel,$autor,$veroeffentlicht,$pers_zmsf, $ugid);
+        $statement->bind_param('sssssi',$titel,$autor,$veroeffentlicht,$pers_zmsf,$bild, $ugid);
         if(!$statement->execute()){
             throw new Exception($statement->error);
         }
@@ -34,8 +34,13 @@ class BuchRepository extends Repository
         }
     }
 
-    public function delete(){
-
+    public function delete($ugid){
+        $query="DELETE FROM $this->tableName WHERE id = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('i', $ugid);
+        if(!$statement->execute()){
+            throw new Exception($statement->error);
+        }
     }
 
     public function getBook($ugid){
