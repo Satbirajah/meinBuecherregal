@@ -23,9 +23,6 @@ class RegistrationController
 
     public function registration(){
         $validation = new Validation();
-        $nicknameOK = false ;
-        $emailOK = false;
-        $passwortOK = false;
         if($_POST ['send']){
 
             $nickname = $_POST['nickname'];
@@ -35,7 +32,7 @@ class RegistrationController
             $emailOK= $validation->email($email);
 
             $passwort = $_POST['passwort'];
-            $passwortOK= $validation->stringLenght(8,15,$email);
+            $passwortOK= $validation->stringLenght(8,25,$email);
             $passwort2 = $_POST['passwort2'];
 
             $loginRepository = new LoginRepository();
@@ -45,6 +42,15 @@ class RegistrationController
                 $login->index();
             }
             else{
+                if(!$emailOK){
+                    echo "Geben Sie eine gültige Email-Adresse ein.";
+                }
+                if(!$passwortOK){
+                    echo "Geben Sie ein gültiges Passwort ein, min. 8 Zeichen und max. 25 Zeichen";
+                }
+                if(!$nicknameOK){
+                    echo "Geben Sie einen gültigen Nickname ein, mind. 3 Zeichen und max. 25 Zeichen.";
+                }
 
             }
 

@@ -9,6 +9,7 @@ class BuchRepository extends Repository
         $query = "INSERT INTO $this->tableName (uid,gid,titel,autor,veroeffentlicht,bildName,pers_zmsf) VALUES (?,?,?,?,?,?,?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
+
         $statement->bind_param('iisssss',$uid,$genreID,$buchTitel,$autor,$veroeffentlicht,$bild,$pers_zmsf);
 
         if (!$statement->execute()) {

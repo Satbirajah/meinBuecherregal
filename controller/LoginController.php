@@ -23,9 +23,17 @@ class LoginController
     public function login(){
 
         if($_POST ['send']){
-            $email = $_POST['email'];
-            $passwort =$_POST['passwort'];
 
+            if(isset($_POST['email'])){
+                $email = $_POST['email'];
+            }else{
+                echo "Geben sie ihre Email-Adresse ein.";
+            }
+            if(isset($_POST['passwort'])){
+                $passwort =$_POST['passwort'];
+            }else{
+                echo "Geben sie ihr Passwort ein.";
+            }
             $loginRepository = new LoginRepository();
             $user = $loginRepository ->getUser($email);
              if(password_verify($passwort, $user->passwort)){
