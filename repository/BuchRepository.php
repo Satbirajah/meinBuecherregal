@@ -12,7 +12,7 @@ class BuchRepository extends Repository
         $statement->bind_param('iisssss',$uid,$genreID,$buchTitel,$autor,$veroeffentlicht,$bild,$pers_zmsf);
 
         if (!$statement->execute()) {
-            throw new Exception($statement->error);
+            throw new Exception($statement->errorgit);
         }
 
         return $statement->insert_id;
