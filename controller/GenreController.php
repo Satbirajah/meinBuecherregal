@@ -11,6 +11,7 @@ require_once '../repository/GenreRepository.php';
 
 class GenreController
 {
+    //für die View, welche anders ist, wenn der User eingeloggt ist
     public function index(){
         if(strlen($_SESSION['uid'])>0){
             $genreRepository = new GenreRepository();

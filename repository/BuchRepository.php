@@ -30,18 +30,9 @@ class BuchRepository extends Repository
         if(!$statement->execute()){
             throw new Exception($statement->error);
         }
+        $statement->update;
         return true;
 
-    }
-
-    public function delete($ugid){
-        $query="DELETE FROM $this->tableName WHERE id = ?";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $ugid);
-        if(!$statement->execute()){
-            throw new Exception($statement->error);
-        }
-        $statement->delete;
     }
 
     public function getBook($ugid){
@@ -59,31 +50,20 @@ class BuchRepository extends Repository
         }
 
     }
-<<<<<<< HEAD
-    public function getBookByUidGid($uid,$gid){
-        $query= "SELECT * FROM $this->tableName WHERE uid = ? AND gid = ? ";
-=======
 
-    /**
-     * @param $uid
-     * @param $gid
-     * @return array
-     * @throws Exception
-     */
     public function getBooksByUidGid($uid, $gid){
         $query= "SELECT * FROM $this->tableName WHERE uid = ? AND gid = ?";
->>>>>>> cf479b5b1ab4763f169e355a5a9ecd5f23148dc4
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ii',$uid,$gid);
-        $result= $statement->get_result();
+
         if(!$statement->execute()){
             throw new Exception($statement->error);
         }
+        $result= $statement->get_result();
         $books = array();
         while ($book = $result->fetch_object()) {
             $books[] = $book;
         }
-
-        return $books;
+       return $books;
     }
 }

@@ -43,11 +43,12 @@ class LoginController
                 $genre->index();
                             }
             else{
-               // echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
+               echo '<p style="color:red">Sie haben das Falsche Passwort eingegeben. </p>';
             }
         }
     }
 
+    //damit sich der User ausloggen kann
     public function logout(){
         session_unset();
         session_destroy();

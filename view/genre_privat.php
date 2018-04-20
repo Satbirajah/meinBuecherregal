@@ -7,7 +7,7 @@
         <?php foreach ($genres as $genre): ?>
             <div class="panel panel-default">
                 <div class="panel-body">
-                  <a href="/buch/index" name="genre" value="<?= $genre->id?>"><p class="description"> <?= $genre->genre; ?> </p></a>
+                    <a href="/buch/index?gid=<?= $genre->id?>" title="genre"><p class="description"> <?= $genre->genre; ?></p> </a>
                 </div>
             </div>
         <?php endforeach ?>

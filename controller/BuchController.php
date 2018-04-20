@@ -16,15 +16,18 @@ class BuchController
     protected $ugid= NULL;
     protected $gid = NULL;
 
+    //für die View, damit die Bücher angezeigt werden können
     public function index(){
        $view = new View('buecher_anzeigen');
        $view->title="Meine Bücher";
        $view->heading="Meine Bücher";
-       $buecher = new GenreRepository();
-       $view->buecher=$buecher->getGenreByUID($_SESSION['uid']);
+       $buecher = new BuchRepository();
+       $gid = $_GET['gid'];
+       $view->buecher=$buecher->getBooksByUidGid($_SESSION['uid'],$gid);
         $view->display();
     }
 
+    //für die View des Erstellen eines Buches
     public function create()
     {
         $genreRepository = new GenreRepository();
@@ -54,17 +57,7 @@ class BuchController
         }
     }
 
-
-    public function showBooks(){
-        $buchRepository = new BuchRepository();
-        $buecher= $buchRepository->getBooksByUidGid($_SESSION['uid'],$this->gid);
-        $view = new View('buecher_anzeigen');
-        $view->buecher = $buecher;
-        $view->title="Bücher ";
-        $view->heading="Buücher";
-        $view->display();
-
-    }
+    //damit das Bild abgespeichert wird
     public function uploadImage($file, $uid )
     {
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
@@ -75,7 +68,7 @@ class BuchController
         return $file_destination;
     }
 
-  //Damit änderungen gemacht werden können
+    //für die View buch_update
     public function updateView()
     {
         $this->ugid = $_GET['id'];
@@ -86,8 +79,10 @@ class BuchController
         $view->heading = "Buch";
         $view->display();
     }
+
+    //Damit Infos zum Buch geändert werden können
     public function update(){
-        if($_POST['send']){
+        if($_POST['update']){
 
             $titel=$_POST['buchTitel'];
             $autor = $_POST['autor'];
@@ -106,11 +101,13 @@ class BuchController
 
     //Damit das Buch gelöscht werden kann
     public function delete(){
-
-        $buchRepository= new BuchRepository();
-        $isOK= $buchRepository->deleteById($_GET['id']);
-        if($isOK ){
-            $this->showBooks();
+        if($_POST['delete']){
+            $buchRepository= new BuchRepository();
+            $isOK= $buchRepository->deleteById($_GET['id']);
+            if($isOK ){
+                $this->showBooks();
+            }
         }
+
     }
 }
