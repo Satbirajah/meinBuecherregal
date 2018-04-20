@@ -10,11 +10,11 @@
                  <div class="panel-body">
                      <br><p class="description"> <h3><?= $buch->titel; ?></h3> <?= $buch->autor; ?> </br><?= $buch->veroeffentlicht; ?>
                      <?= $buch->pers_zmsf; ?> </p></a>
-                    <?php $update = new Form('updateView('.$buch->id.')');
+                    <?php $update = new Form('updateView?id='.$buch->id);
                         echo $update->submit()->label('Anpassen')->name('update');
                         $update->end();
                     ?>
-                     <?php $delete = new Form('delete('.$buch->id.')');
+                     <?php $delete = new Form('delete?id='.$buch->id);
                      echo $update->submit()->label('Löschen')->name('delete');
                      $delete->end();
                      ?>

@@ -1,5 +1,5 @@
 ul {
-	list-style-type: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -9,9 +9,9 @@ ul {
     width: 100%;
 }
 a {
-	float: left;
-	color: white;
-	display: block;
+    float: left;
+    color: white;
+    display: block;
     color: #FFEDE1;
     text-align: center;
     padding: 14px 16px;
@@ -22,33 +22,33 @@ ul:hover{
     color: #6D7BCC;
 }
 p {
-	color: #8A5A4A;
-	
+    color: #8A5A4A;
+
 }
 .f1{
-	background: #A2E0FF;
+    background: #A2E0FF;
 }
 
 .intro {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  display: table;
-  top: 0;
-  background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: table;
+    top: 0;
+    background-size: cover;
 
 }
 .introBox {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-  max-width: none;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
 
 }
 .content {
-  max-width: 50%;
-  margin: 0 auto;
-  padding-bottom:20%;
+    max-width: 50%;
+    margin: 0 auto;
+    padding-bottom:20%;
 
 
 
@@ -56,6 +56,8 @@ p {
 body{
     background-image: url("leiter.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }
 html{
