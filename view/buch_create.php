@@ -19,10 +19,6 @@ echo '<br>';
 echo "<select name='genre[]'>";
     foreach($genres as $genre) {
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 33a190ecf644a43f95e1356cb9f6b10b512bd6c6
         echo '<option value ="' . $genre->id . '">'. $genre->genre.'</option>';
 
     }

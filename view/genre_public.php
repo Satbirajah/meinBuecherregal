@@ -1,4 +1,4 @@
-<article class="hreview open special">
+<article class="hreview open special" style="background-color: #FFEDE1">
     <?php if (empty($genres)): ?>
         <div class="dhd">
             <h2 class="item title"> Hoopla es gibt noch keine Genres</h2>

@@ -12,6 +12,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/css.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -41,6 +42,8 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container"  style="background-color: #FFEDE1">
 
-    <h1><?= $heading ?></h1>
+        <br>
+
+    <h1 style="position: center;"><?= $heading ?></h1>

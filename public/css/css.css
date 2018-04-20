@@ -16,6 +16,10 @@ a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
+}
+ul:hover{
+    color: #6D7BCC;
 }
 p {
 	color: #8A5A4A;
@@ -48,4 +52,18 @@ p {
 
 
 
+}
+body{
+    background-image: url("leiter.jpg");
+    background-repeat: no-repeat;
+
+}
+html{
+    font-family: 'Philosopher', sans-serif;
+}
+.nav :hover{
+    text-shadow: 5px 5px 10px #6D7BCC;
+}
+.nav{
+    font-size: 150%;
 }

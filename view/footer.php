@@ -1,4 +1,5 @@
      <html class="f1">
+     <div class="feet">
         <hr style = width:100%;>
         <footer>
         <link href="/css/style.css" rel="stylesheet">
@@ -17,8 +18,8 @@
 
           
           
-    </footer>    
-        
+    </footer>
+     </div>
 
 
  
