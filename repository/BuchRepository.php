@@ -42,6 +42,7 @@ class BuchRepository extends Repository
         if(!$statement->execute()){
             throw new Exception($statement->error);
         }
+        $statement->delete;
     }
 
     public function getBook($ugid){
@@ -59,7 +60,7 @@ class BuchRepository extends Repository
         }
     }
     public function getBookByUidGid($uid,$gid){
-        $query= "SELECT * FROM $this->tableName WHERE uid = ? AND gid = ?";
+        $query= "SELECT * FROM $this->tableName WHERE uid = ? AND gid = ? ";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ii',$uid,$gid);
         $result= $statement->get_result();
