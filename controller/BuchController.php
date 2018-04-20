@@ -44,14 +44,10 @@ class BuchController
             $veroeffentlicht= $_POST['veroeffentlicht'];
             $pers_zmsf=$_POST['pers_zmsf'];
             $genre =$_POST['genre'];
-            echo $_POST['genre'];
             $uid = $_SESSION['uid'];
             $bild= $this->uploadImage($_FILES['bild'],$uid);
-            $genreRepository = new GenreRepository();
-            $gid = $genreRepository->getGenre($genre);
-
             $buchRepository= new BuchRepository();
-            $buchRepository->create($buchTitel,$autor,$veroeffentlicht,$pers_zmsf,$bild,$uid,$gid);
+            $buchRepository->create($buchTitel,$autor,$veroeffentlicht,$pers_zmsf,$bild,$uid,$genre);
 
             $genreController = new GenreController();
             $genreController->index();

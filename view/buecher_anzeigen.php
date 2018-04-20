@@ -22,10 +22,4 @@
             </div>
         <?php endforeach ?>
     <?php endif ?>
-    <?php
-
-  /*  $form = new Form('/buch/createBook');
-    echo $form->submit()->label('Buch hinzufügen')->name('send');
-    $form->end();*/
-    ?>
 </article>
