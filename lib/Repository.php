@@ -173,5 +173,6 @@ class Repository
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
+        return true;
     }
 }

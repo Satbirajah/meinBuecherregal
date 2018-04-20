@@ -61,7 +61,7 @@ class BuchController
         $view = new View('buecher_anzeigen');
         $view->buecher = $buecher;
         $view->title="Bücher ";
-        $view->heading="Buücher";
+        $view->heading="Bücher";
         $view->display();
 
     }
@@ -82,6 +82,7 @@ class BuchController
         $buch = new BuchRepository();
         $view = new View('buch_update');
         $view->buch = $buch->readById($this->ugid);
+
         $view->title = "Buch";
         $view->heading = "Buch";
         $view->display();
@@ -105,6 +106,10 @@ class BuchController
     }
 
     //Damit das Buch gelöscht werden kann
+
+    /**
+     * @throws Exception
+     */
     public function delete(){
 
         $buchRepository= new BuchRepository();
