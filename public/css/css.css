@@ -56,6 +56,8 @@ p {
 body{
     background-image: url("leiter.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }
 html{

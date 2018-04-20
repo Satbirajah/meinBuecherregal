@@ -82,6 +82,8 @@ class Repository
      */
     protected $tableName = null;
 
+    protected $primaryKey = 'id';
+
     /**
      * Diese Funktion gibt den Datensatz mit der gegebenen id zurück.
      *
@@ -94,7 +96,7 @@ class Repository
     public function readById($id)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE id=?";
+        $query = "SELECT * FROM {$this->tableName} WHERE {$this->primaryKey}=?";
 
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
@@ -163,7 +165,7 @@ class Repository
      */
     public function deleteById($id)
     {
-        $query = "DELETE FROM {$this->tableName} WHERE id=?";
+        $query = "DELETE FROM {$this->tableName} WHERE {$this->primaryKey}=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('i', $id);

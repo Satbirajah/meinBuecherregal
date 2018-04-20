@@ -15,6 +15,7 @@ class BuchController
     protected $book = null;
     protected $ugid= NULL;
     protected $gid = NULL;
+
     public function index(){
        $view = new View('buecher_anzeigen');
        $view->title="Meine Bücher";
@@ -76,12 +77,12 @@ class BuchController
     }
 
   //Damit änderungen gemacht werden können
-    public function updateView($id)
+    public function updateView()
     {
-        $this->ugid = $id;
+        $this->ugid = $_GET['id'];
         $buch = new BuchRepository();
-        $view = new View('buecher_update');
-        $view->buech = $buch->readById($this->ugid);
+        $view = new View('buch_update');
+        $view->buch = $buch->readById($this->ugid);
         $view->title = "Buch";
         $view->heading = "Buch";
         $view->display();
@@ -95,16 +96,22 @@ class BuchController
             $bild= $this->uploadImage($_FILES['bild'],$_SESSION['uid']);
             $pers_zmsf=$_POST['pers_zmsf'];
             $buchRepository= new BuchRepository();
-            $buchRepository->update($titel,$autor,$veroeffentlicht,$pers_zmsf,$this->ugid,$bild);
+            $isOK= $buchRepository->update($titel,$autor,$veroeffentlicht,$pers_zmsf,$this->ugid,$bild);
+            if($isOK ){
+                $this->showBooks();
+            }
         }
 
 
     }
 
     //Damit das Buch gelöscht werden kann
-    public function delete($ugid){
-        //zuerts ugId holen
+    public function delete(){
+
         $buchRepository= new BuchRepository();
-        $buchRepository->deleteById($ugid);
+        $isOK= $buchRepository->deleteById($_GET['id']);
+        if($isOK ){
+            $this->showBooks();
+        }
     }
 }

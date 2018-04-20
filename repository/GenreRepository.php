@@ -16,10 +16,6 @@ class GenreRepository extends Repository{
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s',$genre);
-<<<<<<< HEAD
-
-=======
->>>>>>> d542d8f7f937e77d34a7a86abb9452e03e356eba
 
         if(!$statement->execute()){
 
