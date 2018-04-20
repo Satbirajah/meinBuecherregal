@@ -57,9 +57,9 @@ class BuchController
         }
     }
 
-<<<<<<< HEAD
+
     //damit das Bild abgespeichert wird
-=======
+
 
     public function showBooks(){
         $buchRepository = new BuchRepository();
@@ -71,7 +71,7 @@ class BuchController
         $view->display();
 
     }
->>>>>>> 9991687b464aeadc2f792e548d4343a611240d89
+
     public function uploadImage($file, $uid )
     {
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
