@@ -13,11 +13,11 @@ class Validation
             return true;
         }
         elseif (strlen($string)<$min){
-            return 'Sie müssen mindestens '.$min.' Zeichen eingeben.';
+            return false;
         }
         elseif (strlen($string)>$max){
 
-            return 'Sie können höchstens '.$max.' Zeichen eingeben.';
+            return false;
         }
     }
     public function email($email){

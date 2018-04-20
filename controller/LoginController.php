@@ -11,7 +11,6 @@ require_once 'GenreController.php';
 
 class LoginController
 {
-
     public function index()
     {
         $view = new View('user_login');
@@ -24,12 +23,11 @@ class LoginController
     public function login(){
 
         if($_POST ['send']){
-            $nickname = $_POST['nickname'];
             $email = $_POST['email'];
             $passwort =$_POST['passwort'];
 
             $loginRepository = new LoginRepository();
-            $user = $loginRepository ->getUser($email,$nickname);
+            $user = $loginRepository ->getUser($email);
              if(password_verify($passwort, $user->passwort)){
 
                 $_SESSION['uid']= $user->id;

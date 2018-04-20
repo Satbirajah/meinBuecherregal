@@ -8,9 +8,13 @@
 
 require_once '../repository/BuchRepository.php';
 require_once '../repository/GenreRepository.php';
+require_once 'GenreController.php';
+
 class BuchController
 {
     protected $book = null;
+    protected $ugid= NULL;
+    protected $gid = NULL;
     public function index(){
        $view = new View('buecher_anzeigen');
        $view->title="Meine Bücher";
@@ -22,11 +26,8 @@ class BuchController
 
     public function create()
     {
-
         $genreRepository = new GenreRepository();
         $genres = $genreRepository -> readAll();
-
-
 
         $view = new View('buch_create');
         $view->genres = $genres;
@@ -43,22 +44,25 @@ class BuchController
             $veroeffentlicht= $_POST['veroeffentlicht'];
             $pers_zmsf=$_POST['pers_zmsf'];
             $genre =$_POST['genre'];
+            echo $_POST['genre'];
             $uid = $_SESSION['uid'];
-            $bild= $this->uploadImage($_FILES,$uid);
+            $bild= $this->uploadImage($_FILES['bild'],$uid);
             $genreRepository = new GenreRepository();
-            $genreID = $genreRepository->getGenre($genre);
-            $gid = $genreID->id;
+            $gid = $genreRepository->getGenre($genre);
+
             $buchRepository= new BuchRepository();
             $buchRepository->create($buchTitel,$autor,$veroeffentlicht,$pers_zmsf,$bild,$uid,$gid);
+
+            $genreController = new GenreController();
+            $genreController->index();
         }
     }
 
 
     public function showBooks(){
         $buchRepository = new BuchRepository();
-        $buecher= $buchRepository->getBookByUidGid();
-
-       $view = new View('buecher_anzeigen');
+        $buecher= $buchRepository->getBooksByUidGid($_SESSION['uid'],$this->gid);
+        $view = new View('buecher_anzeigen');
         $view->buecher = $buecher;
         $view->title="Bücher ";
         $view->heading="Buücher";
@@ -70,25 +74,32 @@ class BuchController
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
         $timestamp = time();
         $file_destination = "../public/images/" . $uid . $timestamp . '.' . $ext;
-        if (move_uploaded_file($file['tmp_name'], $file_destination)) {
-            echo $file_destination;
-        }
+        move_uploaded_file($file['tmp_name'], $file_destination);
+
         return $file_destination;
     }
 
   //Damit änderungen gemacht werden können
-    public function update($ugid){
-
+    public function updateView($id)
+    {
+        $this->ugid = $id;
+        $buch = new BuchRepository();
+        $view = new View('buecher_update');
+        $view->buech = $buch->readById($this->ugid);
+        $view->title = "Buch";
+        $view->heading = "Buch";
+        $view->display();
+    }
+    public function update(){
         if($_POST['send']){
-            //zuerst ugid holen vom buch
-            //neue werte holen
+
             $titel=$_POST['buchTitel'];
             $autor = $_POST['autor'];
             $veroeffentlicht= $_POST['veroeffentlicht'];
+            $bild= $this->uploadImage($_FILES['bild'],$_SESSION['uid']);
             $pers_zmsf=$_POST['pers_zmsf'];
-            $genre =$_POST['genre'];
             $buchRepository= new BuchRepository();
-            $buchRepository->update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid);
+            $buchRepository->update($titel,$autor,$veroeffentlicht,$pers_zmsf,$this->ugid,$bild);
         }
 
 
