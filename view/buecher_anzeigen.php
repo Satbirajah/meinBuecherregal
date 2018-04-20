@@ -9,7 +9,11 @@
             <div class="panel panel-default">
                  <div class="panel-body">
                      <br><p class="description"> <h3><?= $buch->titel; ?></h3> <?= $buch->autor; ?> </br><?= $buch->veroeffentlicht; ?>
+<<<<<<< HEAD
+                     <?= $buch->pers_zmsf; ?> </p>
+=======
                      <?= $buch->pers_zmsf; ?> </p></a>
+>>>>>>> 9991687b464aeadc2f792e548d4343a611240d89
                     <?php $update = new Form('updateView?id='.$buch->ugID);
                         echo $update->submit()->label('Anpassen')->name('update');
                         $update->end();

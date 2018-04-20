@@ -20,7 +20,7 @@ class RegistrationController
         $view->heading = 'Registration';
         $view->display();
     }
-
+    //Registration des Benutzers
     public function registration(){
         $validation = new Validation();
         if($_POST ['send']){
