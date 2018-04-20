@@ -57,7 +57,21 @@ class BuchController
         }
     }
 
+<<<<<<< HEAD
     //damit das Bild abgespeichert wird
+=======
+
+    public function showBooks(){
+        $buchRepository = new BuchRepository();
+        $buecher= $buchRepository->getBooksByUidGid($_SESSION['uid'],$this->gid);
+        $view = new View('buecher_anzeigen');
+        $view->buecher = $buecher;
+        $view->title="Bücher ";
+        $view->heading="Bücher";
+        $view->display();
+
+    }
+>>>>>>> 9991687b464aeadc2f792e548d4343a611240d89
     public function uploadImage($file, $uid )
     {
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
@@ -75,6 +89,7 @@ class BuchController
         $buch = new BuchRepository();
         $view = new View('buch_update');
         $view->buch = $buch->readById($this->ugid);
+
         $view->title = "Buch";
         $view->heading = "Buch";
         $view->display();
@@ -100,6 +115,10 @@ class BuchController
     }
 
     //Damit das Buch gelöscht werden kann
+
+    /**
+     * @throws Exception
+     */
     public function delete(){
         if($_POST['delete']){
             $buchRepository= new BuchRepository();
