@@ -30,7 +30,10 @@ class BuchRepository extends Repository
         if(!$statement->execute()){
             throw new Exception($statement->error);
         }
+<<<<<<< HEAD
         
+=======
+>>>>>>> 4519fa4da2be54bc07c94da054137ab81d850a2c
         return true;
 
     }
@@ -54,8 +57,14 @@ class BuchRepository extends Repository
 
     public function getBooksByUidGid($uid, $gid){
         $query= "SELECT * FROM $this->tableName WHERE uid = ? AND gid = ?";
+<<<<<<< HEAD
 
 
+=======
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ii',$uid,$gid);
+
+>>>>>>> 4519fa4da2be54bc07c94da054137ab81d850a2c
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ii',$uid,$gid);
 
