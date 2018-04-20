@@ -18,7 +18,7 @@ $form = new Form('/registration/registration');
 echo $form->text()->label('Nickname')->name('nickname');
 echo $form->email()->label('Mail')->name('email');
 echo $form->password()->label('Passwort')->name('passwort');
-echo $form->password()->label('Passwort2')->name('passwort2');
+echo $form->password()->label('Passwort Wiederholen')->name('passwort2');
 echo $form->submit()->label('Registrieren')->name('send');
 $form->end();
 ?>

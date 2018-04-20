@@ -56,12 +56,14 @@ p {
 body{
     background-image: url("leiter.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+   background-size: cover;
+  background-position: center;
+
 
 }
 html{
     font-family: 'Philosopher', sans-serif;
+
 }
 .nav :hover{
     text-shadow: 5px 5px 10px #6D7BCC;

@@ -42,7 +42,7 @@
       </div>
     </nav>
 
-    <div class="container"  style="background-color: #FFEDE1">
+    <div class="container"  style="background-color: #FFEDE1; padding-left: 5%; padding-right: 5%;">
 
         <br>
 

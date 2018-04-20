@@ -1,5 +1,5 @@
      <html class="f1">
-     <div class="feet">
+     <div class="feet" style="width= 100%; padding: block;">
         <hr style = width:100%;>
         <footer>
         <link href="/css/style.css" rel="stylesheet">

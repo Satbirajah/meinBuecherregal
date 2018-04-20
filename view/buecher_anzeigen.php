@@ -1,6 +1,6 @@
 <article class="hreview open special">
     <?php if (empty($buecher)): ?>
-        <div class="dhd" style="padding-bottom: 100%">
+        <div class="dhd" style="padding-bottom: 100%;">
             <h2 class="item title"> Du hast noch keine Bücher. </h2>
         </div>
     <?php else: ?>
