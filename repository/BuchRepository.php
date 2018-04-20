@@ -22,20 +22,18 @@ class BuchRepository extends Repository
 
     }
 
-    public function update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid,$bild){
+    public function update($titel,$autor,$veroeffentlicht,$pers_zmsf,$ugid,$bild)
+    {
 
-        $query="UPDATE $this->tableName SET titel = ? , autor= ? ,veroeffentlicht = ?, pers_zmsf=?, bildName = ? WHERE ugid = ?";
+        $query = "UPDATE $this->tableName SET titel = ? , autor= ? ,veroeffentlicht = ?, pers_zmsf=?, bildName = ? WHERE ugid = ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('sssssi',$titel,$autor,$veroeffentlicht,$pers_zmsf,$bild, $ugid);
-        if(!$statement->execute()){
+        $statement->bind_param('sssssi', $titel, $autor, $veroeffentlicht, $pers_zmsf, $bild, $ugid);
+        if (!$statement->execute()) {
             throw new Exception($statement->error);
-        }
-<<<<<<< HEAD
-        
-=======
->>>>>>> 4519fa4da2be54bc07c94da054137ab81d850a2c
-        return true;
 
+            return true;
+
+        }
     }
 
     public function getBook($ugid){
@@ -57,15 +55,7 @@ class BuchRepository extends Repository
 
     public function getBooksByUidGid($uid, $gid){
         $query= "SELECT * FROM $this->tableName WHERE uid = ? AND gid = ?";
-<<<<<<< HEAD
-
-
-=======
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ii',$uid,$gid);
-
->>>>>>> 4519fa4da2be54bc07c94da054137ab81d850a2c
-        $statement = ConnectionHandler::getConnection()->prepare($query);
+       $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ii',$uid,$gid);
 
         if(!$statement->execute()){

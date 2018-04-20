@@ -61,7 +61,7 @@ class BuchController
 
 
     //damit das Bild abgespeichert wird
-<<<<<<< HEAD
+
 
 
     public function showBooks(){
@@ -75,17 +75,16 @@ class BuchController
 
     }
 
-=======
 
->>>>>>> 4519fa4da2be54bc07c94da054137ab81d850a2c
     public function uploadImage($file, $uid )
     {
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
         $timestamp = time();
-        $file_destination = "../public/images/" . $uid . $timestamp . '.' . $ext;
+        $file_destination = "../public/images/" . $uid . $timestamp . '.PNG';
+        $fileSave = "/images/" . $uid . $timestamp . '.PNG';
         move_uploaded_file($file['tmp_name'], $file_destination);
 
-        return $file_destination;
+        return $fileSave;
     }
 
     //für die View buch_update

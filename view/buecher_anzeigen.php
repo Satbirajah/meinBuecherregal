@@ -8,13 +8,10 @@
         <?php foreach ($buecher as $buch): ?>
             <div class="panel panel-default">
                  <div class="panel-body">
-                     <br><p class="description"> <h3><?= $buch->titel; ?></h3> <?= $buch->autor; ?> </br><?= $buch->veroeffentlicht; ?>
+                     <br><p class="description"> <h3><?= $buch->titel; ?></h3> <img src="<?= $buch->bildname;?>" >  <?= $buch->autor; ?> </br><?= $buch->veroeffentlicht; ?>
 
                      <?= $buch->pers_zmsf; ?> </p>
-<<<<<<< HEAD
-=======
 
->>>>>>> 4519fa4da2be54bc07c94da054137ab81d850a2c
                      <?= $buch->pers_zmsf; ?> </p></a>
 
                     <?php $update = new Form('updateView?id='.$buch->ugID);
